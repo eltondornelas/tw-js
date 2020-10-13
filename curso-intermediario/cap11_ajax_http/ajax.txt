@@ -1,0 +1,13 @@
+Antes, quando queríamos atualizar os dados de uma página, era necessário atualizar a página inteira. Isso era ruim, pois era necessário baixar todos os arquivos da página novamente, e a Internet era bem mais lenta.
+
+Com o objeto XMLHttpRequest podemos fazer uma requisição a um servidor por JavaScript, e assim, pegar qualquer tipo de arquivo ou dados.
+
+E então surgiu em 2005 o termo AJAX, que significa Asyncronous JavaScript and XML. A ideia é fazer requisições para um servidor e, ao invés de receber um HTML inteiro já com dados preenchidos, recebemos apenas os dados em formato XML (hoje em dia o JSON é mais comum).
+
+Enquanto esperamos a resposta do servidor o navegador pode executar outros códigos, o que significa que nosso código não fica travado esperando a resposta. Essa espera sem travas para poder continuar a execução após uma resposta é o que chamamos de assincronicidade. Dizemos então que requisições são feitas com código Assíncrono, pois ele não é contínuo.
+
+Com os dados em mãos podemos manipular o HTML com JavaScript. Isso permite que a gente atualize apenas a parte da página que precisa ser atualizada, e menos dados são trafegados.
+
+Como a página não será mais atualizada e apenas uma parte dela é alterada, as páginas web começaram a se parecer mais com softwares desktop, o que permitiu um grande crescimento de enormes sistemas web.
+
+Uma das vantagens de um sistema web ao invés de um instalado na máquina do usuário é que o usuário não precisa instalar o programa, basta acessá-lo pelo endereço. Também facilita a vida dos desenvolvedores, pois todos os usuários sempre estarão com o sistema atualizado.
