@@ -1,29 +1,29 @@
-const Template = (function(){
+const Template = (function () {
 	const languageSelect = document.querySelector('#language-tags');
 	const listElement = document.querySelector('#list');
-	
+
 	let listItems = [];
 	let languageTag = 'en-US';
-	
+
 	languageSelect.addEventListener('change', changeLanguage);
-	
-	function changeLanguage(){
+
+	function changeLanguage() {
 		languageTag = languageSelect.value;
 		render();
 	}
 
-	function setList(list){
+	function setList(list) {
 		listItems = list;
 		render();
 	}
 
-	function render(){
+	function render() {
 		let html = '';
 		const numberFormatter = new Intl.NumberFormat(languageTag);
-		const dateFormatter = new Intl.DateTimeFormat(languageTag, {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+		const dateFormatter = new Intl.DateTimeFormat(languageTag, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 		listItems.forEach(item => {
 			const forks = numberFormatter.format(item.forks);
-			const createdAt = dateFormatter.format( new Date(item.created_at) );
+			const createdAt = dateFormatter.format(new Date(item.created_at));
 			html += `
 				<li>
 					<div>
@@ -50,9 +50,9 @@ const Template = (function(){
 
 
 
-const Data = (function($){
+const Data = (function ($) {
 	const searchInput = document.querySelector('#search');
-	
+
 	searchInput.addEventListener('keyup', search);
 
 	/*function search(event){
@@ -65,8 +65,8 @@ const Data = (function($){
 		}
 	}*/
 
-	async function search(event){
-		if(event && event.keyCode === 13){
+	async function search(event) {
+		if (event && event.keyCode === 13) {
 			const searchQuery = searchInput.value;
 			let response = await fetch(`https://api.github.com/search/repositories?q=${searchQuery}`);
 			response = await response.json();
@@ -75,14 +75,3 @@ const Data = (function($){
 	}
 
 })(Template);
-
-
-
-
-
-
-
-
-
-
-
